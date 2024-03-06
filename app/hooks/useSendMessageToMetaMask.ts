@@ -13,7 +13,6 @@ export const useSendMessageToMetaMask = () => {
 
     const signer = await new ethers.BrowserProvider(ethereum).getSigner();
     try {
-      // Sign the message
       await signer.signMessage(message.nonce);
     } catch (error) {
       alert('User denied message signature or some error occurred.');
